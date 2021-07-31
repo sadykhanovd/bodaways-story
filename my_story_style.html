@@ -1,0 +1,158 @@
+<meta http-equiv="refresh" content="0; url=index.html">
+
+
+<!--PUT YOUR CUSTOM CSS BETWEEN THESE TWO
+    STYLE TAGS. YOU MUST NOT USE THE STYLE TAG
+    IN YOUR STORY FILES, BUT YOU CAN USE THE STYLE
+    PROPERTY IN STORY FILES.
+
+    THIS FILE IS THE BEST PLACE TO PUT YOUR CUSTOM
+    CSS IF YOU WANT TO ENSURE THAT IT WORKS WITH
+    INKDML.
+-->
+
+<style is="custom-style">
+    /*
+    EXAMPLE CLASS. FEEL FREE TO DELETE. ALSO, REMEMBER
+    THAT COMMENTS ARE CREATED DIFFERENTLY
+    WHEN INSIDE OF A style TAG!
+    */
+ html {
+/*
+    width:1024px;
+    height: 800px;    
+*/
+    background-image: url('wood_bg.png');
+    width:100%;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-blend-mode:normal; 
+    transition: opacity ease-in 0,2s;
+    
+    /*opacity: 0.8; 
+      height: 100%;   */
+}
+
+    
+    p{
+        text-align: left;
+        font-size: 1.2em;
+        line-height: 1.5;
+        font-family: 'Roboto Slab', serif, 'Balthazar', serif;
+        color: #fbeed4;
+        background-color: black;
+        box-sizing: border-box;
+/*        position: absolute;*/
+        left:180px;
+        /*right:70%;*/
+/*        background-color: orangered;*/
+       
+    }
+    
+    .transbox {
+    display: inline-block;
+    padding:18px;
+/*    margin:20px;*/
+    height:420px;
+/*        left:40px;*/
+/*    top:165px;    */
+        width:450px;
+    background-color: black;
+    border: 2px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+/*        background-color: deeppink;*/
+     margin-right: 7%;
+}
+    
+        .ctnr{
+        display:flex;
+        
+        justify-content: center;
+        flex-flow: column;
+/*            background-color: darkblue;*/
+    }
+    
+    .content{
+        display: flex;
+/*        background-color: purple;*/
+        flex-flow: row-reverse;
+    }
+ 
+    img{
+  
+/*        mix-blend-mode:normal;*/
+        opacity: 1;
+        box-shadow: 8px 10px 10px black;
+        border-radius: 4px;
+        width: 100%;
+        
+    }
+    
+    .screen {
+        display: inline-block;
+/*        margin-left: 620px;*/
+        width:560px;
+        height:420px; 
+        margin-top: 20px;
+/*
+         top:152px;
+        margin: 40px;
+*/
+/*        background-color: greenyellow;*/
+    }
+    
+    inkd-node{
+        display: block;
+        width:1200px;
+        height:700px;
+        margin:2em auto;
+        font-family: inherit;
+        /*text-align: center; */
+       
+    }
+    
+    .btn_ctnr{
+  display: inline-block;
+  /*justify-content: center;*/
+        text-align: center;
+    }
+    
+    inkd-button{
+/*        position: relative; */
+        display: inline-flex;
+        flex-flow: wrap;
+/*        flex-flow: row wrap;    */
+        justify-content:center;
+        /*margin-top:48%;
+        bottom:10%;
+        left:30%;*/
+        /*width: 20%;*/
+        top:460px;
+        font-family: inherit;
+        text-align: center;
+        color:#01281e;
+        float:none;
+        margin:2px; 
+/*        left:30%;*/
+        /*right:auto;
+        left:auto; 
+        background-color:#b48954;*/
+        background-image: url('button_texture.png');
+        background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+         
+    }
+     
+    inkd-button:hover{
+        background-color:#fbeed4;  
+        background-image:none;
+    }
+
+    
+
+   </body>
+</style>

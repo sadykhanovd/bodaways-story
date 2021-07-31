@@ -1,0 +1,856 @@
+<inkd-content name="nodes" data-inkdviz="project: Untitled Project">
+   <inkd-audio src="audio/admiralbob77_-_Longing_for_Tumbleweeds.mp3" name="west" autoplay></inkd-audio>
+    <inkd-audio src="audio/131142__flameeagle__block.mp3" name="block" autoplay></inkd-audio>
+    <inkd-audio src="audio/175159__minigunfiend__western-deep-progression-01.wav" name="doubt" autoplay></inkd-audio>
+    <inkd-audio src="audio/178815__krinkron__tale-jail.wav" name="jail" autoplay></inkd-audio>
+    <inkd-audio src="audio/80449__turtlelg__jaildoorclose.wav" name="jail1" autoplay></inkd-audio>
+    <inkd-audio src="audio/182273__martian__gun-for-ghose.wav" name="gun" autoplay></inkd-audio>
+    <inkd-audio src="audio/202544__deraj__cards-shuffling.wav" name="card" autoplay></inkd-audio>
+     <inkd-audio src="audio/259544__nicktermer__punch-with-splats.wav" name="punch" autoplay></inkd-audio>
+      <inkd-audio src="audio/342433__captainbusiness67__fight-scene.mp3" name="fight" autoplay></inkd-audio>
+    <inkd-audio src="audio/346567__hannagreen__steps-park.wav" name="step" autoplay></inkd-audio>
+     <inkd-audio src="audio/411431__septem-oxyuranus__blues-cowboy-west-acoustic-guitar-intro.mp3" name="cowboy" autoplay></inkd-audio>
+    <inkd-audio src="audio/261985__ericlemans__busy-bar-ambient-sound.wav" name="bar" autoplay></inkd-audio>
+    <inkd-audio src="audio/369252__funwithsound__victory-celebration-movie-score.wav" name="victory" autoplay></inkd-audio>
+    <inkd-audio src="audio/412427__florianreichelt__fail-sound-effect-accoustic-guitar.wav" name="fail" autoplay></inkd-audio>
+     <inkd-audio src="audio/60671__k1m218__sigh4.wav" name="sigh" autoplay></inkd-audio>
+    
+    <inkd-node name="nodes1" set-prop="stories=false, sherifftalk=false, townsfolk=false, casino=false, saloon=false, office=false, help=0, robbed=false" topic="nodes1" start="" data-inkdviz="x: 18.0, y: 18.0, basicMode: true" play-audio="west" set-audio-volume = "west:0.4">
+       <div class="ctnr">
+         <div class="content">  
+       <img src="img/bodaway1.png" class="screen">
+             <p class="transbox">The Apache Kid, a notorious renegade has been captured and is in transit to Yuma through Loma Parda. As one of his faithful posse, you aim to free him before he's brought to his final location. You've had good luck thus far on your mission, but perhaps your decisions will trigger your unfortunate demise. Will you, Bodaway, manage to free your friend The Apache Kid?<br><br>The decisions you make in this story will affect its outcomes.</p> </div>
+      <div class="btn_ctnr">
+        <inkd-button goto="beginning" tabindex="0"  class="btn-jumbo">
+            Start story
+        </inkd-button>
+        <inkd-button goto="credits" tabindex="0">
+            Credits
+        </inkd-button>
+           </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="stayOutside" topic="stayOutside" data-inkdviz="x: 22.6, y: 236.7, basicMode: false" play-audio="step" set-audio-volume = "step:0.5">
+      <div class="ctnr">
+           <div class="content">
+       <img src="img/outside.png" class="screen">
+        <p class="transbox">With no convoy in sight, I should decide what to do next.</p>
+          </div>
+          <div class="btn_ctnr">
+        <inkd-button goto="enterTown" tabindex="0" pause-audio="step">
+            Enough time has gone up the spout, I reckon I should probably do some recon (enter town)
+        </inkd-button>
+        <inkd-button goto="stayOutside1" tabindex="0" pause-audio="step">
+            I can wait a little longer to ambush them... (stay outside)
+        </inkd-button>
+        </div>
+    </div>
+    </inkd-node>
+        <inkd-node name="stayOutside1" topic="stayOutside1" data-inkdviz="x: 22.6, y: 236.7, basicMode: false" play-audio="step" set-audio-volume = "step:0.5">
+         <div class="ctnr">
+           <div class="content">
+        <img src="img/outside.png" class="screen">
+               <p class="transbox">I waited outside for too long, and The Kid is long gone. I should've tried to get some help.</p> </div>
+        <div class="btn_ctnr">       
+        <inkd-button goto="nodes1" tabindex="0" pause-audio="victory">
+            Replay?
+            </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="enterTown" topic="enterTown" data-inkdviz="x: 274.2, y: 45.1, basicMode: false" play-audio="step"  set-audio-volume = "step:0.5">
+          <div class="ctnr">
+           <div class="content">
+        <img src="img/threeBuildings.png" class="screen"> 
+               <p class="transbox">People are bustling through the main street, where there is a saloon, the sheriff's office, and a casino. I need help in rescuing The Apache Kid, so I gotta move fast.</p> </div>
+           <div class="btn_ctnr">    
+        <inkd-if rule="casino==false">
+            <inkd-button goto="enterCasino1" tabindex="0" pause-audio="step">
+                Casinos are fun, maybe I can get some intel there (enter casino)
+               </inkd-button> 
+        </inkd-if>
+        <inkd-if rule="saloon==false">
+
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="step">
+                Is there a place to grab a drink in this town? (enter saloon)
+            </inkd-button></inkd-if> <br></div>
+            <div class="btn_ctnr"> 
+        <inkd-if rule="townsfolk==false">   <inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            Could be dangerous, but maybe these people could help me out.
+            </inkd-button></inkd-if>
+        <inkd-if rule="office==false">    
+            <inkd-button goto="enterOffice1" tabindex="0" pause-audio="step">
+                The sheriff might help me out. (enter the sheriff's office)
+            </inkd-button>
+        </inkd-if>
+            </div> </div>
+    </inkd-node>
+    <inkd-node name="enterCasino1" set-prop="casino=true" topic="enterCasino1" data-inkdviz="x: 51.1, y: 689.7, basicMode: false" play-audio="card"><div class="ctnr">
+           <div class="content">
+       <img src="img/bodaway_saloon.png" class="screen">
+               <p class="transbox">I've never seen so many greenbacks lying around in my life! And who's this fella staring at me? Perhaps he's Kesef, the owner of the casino here in Loma Parda...</p></div>
+        <div class="btn_ctnr">
+        <inkd-button goto="robCasino" tabindex="0" pause-audio="card">
+            Now this is what I call a pay day! (pull out a gun)
+        </inkd-button>
+        <inkd-button goto="talkKesef" tabindex="0" pause-audio="card">
+            Let's see if he has anything to say.
+            </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="enterBar1" set-prop="saloon=true" topic="enterBar1" data-inkdviz="x: 138.5, y: 813.7, basicMode: false" play-audio="bar" set-audio-volume = "bar:0.4">
+       <div class="ctnr">
+           <div class="content"><img src="img/bodaway_saloon.png" class="screen">
+               <p class="transbox">The bar is crowded, and it's hard to decipher one person's face from the next... that is, except for the man whose face I could never forget. Colonel Sennep is managing the capture and transfer of The Apache Kid. He's also mean enough to steal a coin off a dead man's eyes. He's responsible for killing dozens of my people.</p> </div>
+     <div class="btn_ctnr">
+     <inkd-button goto="makeRuckus" tabindex="0" pause-audio="bar"> 
+            I am gonna to blow them all to kingdom come!
+        </inkd-button>
+        <inkd-button goto="talkCecil" tabindex="0" pause-audio="bar">
+            I need to stay calm, maybe a drink will loosen me up.
+        </inkd-button>
+        <inkd-button goto="fightSenep" tabindex="0" pause-audio="bar">
+            I am gonna to give Sennep everything he has comin' to him!
+        </inkd-button>
+        <inkd-button goto="cornerObserve" tabindex="0" pause-audio="bar">
+            I should see what is going on and get a better read of the room.
+         </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="makeRuckus" topic="makeRuckus" data-inkdviz="x: 495.2, y: 83.5, basicMode: false" play-audio="fight">
+       <div class="ctnr">
+           <div class="content">
+           <img src="img/Gun_pulled.png" class="screen">
+               <p class="transbox">After firing a few shots of my own the bartender and bar owner, Cecil, cocks his gun and points it at me.</p></div>
+        <div class="btn_ctnr">
+        <inkd-button goto="dodgeBullet" tabindex="0" pause-audio="fight">
+            "Okay, okay, fine, I'll stop."
+        </inkd-button>
+        <inkd-button goto="pullGunSennep1" tabindex="0" pause-audio="fight">
+            Sennep is not getting out of here alive!
+            </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="talkCecil" topic="talkCecil" data-inkdviz="x: 676.9, y: 133.1, basicMode: false" play-audio="bar" set-audio-volume = "bar:0.4"><div class="ctnr">
+           <div class="content">
+       <img src="img/bartender.png" class="screen">
+               <p class="transbox">I start chatting with Cecil, the bar owner.<br><br>I seem to remember hearing he often gets drunk with his customers.</p> </div>
+     <div class="btn_ctnr">
+        <inkd-button goto="beBlunt" tabindex="0" pause-audio="bar">
+            "So, did you hear anything about that convoy?"
+        </inkd-button>
+        <inkd-button goto="complimentCecil" tabindex="0" pause-audio="bar">
+            "Let me get you a drink, my friend!"
+         </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="fightSenep" topic="fightSenep" data-inkdviz="x: 422.1, y: 450.5, basicMode: false" play-audio="punch">
+      <div class="ctnr">
+           <div class="content">
+       <img src="img/sennep.png" class="screen">
+               <p class="transbox">Sennep is a dead man, as far as I am concerned.</p> </div>
+         <div class="btn_ctnr">      
+        <inkd-button goto="hitSennep" tabindex="0" pause-audio="punch">
+            "You can slide, mister."
+        </inkd-button>
+        <inkd-button goto="backDown" tabindex="0" pause-audio="punch">
+            I reckon I should lay low before he recognizes me.
+             </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="cornerObserve" topic="cornerObserve" data-inkdviz="x: 572.9, y: 389.1, basicMode: false">
+       <div class="ctnr">
+           <div class="content"><img src="img/sennep.png" class="screen">
+               <p class="transbox">Upon recognizing me, Sennep approaches me and starts gloating about how much he is going to enjoy watching The Apache Kid hang.</p> </div>
+    <div class="btn_ctnr">
+        <inkd-button goto="pullGunSennep" tabindex="0">
+            Time to kill this son of a bitch!
+        </inkd-button>
+        <inkd-button goto="hitSennep" tabindex="0">
+            Time to give this bastard what he deserves!
+        </inkd-button>
+        <inkd-button goto="talkCecil" tabindex="0">
+            I have to keep cool for The Kid.
+        </inkd-button> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="pullGunSennep" topic="pullGunSennep" set-prop="sennep:random(1 | 4)" data-inkdviz="x: 433.0, y: 335.4, basicMode: false" play-audio="gun">
+      <div class="ctnr">
+           <div class="content">
+    <inkd-box animation  = "wait:0.5s,  bounce:2s:2">
+       <img src="img/Pull_gun.png" class="screen"> 
+       </inkd-box>
+               <p class="transbox">When I draw my gun, shots are fired in both directions</p></div>
+    <div class="btn_ctnr">
+        <inkd-if rule="sennep==1 OR sennep==2 OR sennep==3">
+            <inkd-button goto="sennepDies" tabindex="0">
+                Probably too good of an end for that bastard. I'll spit on his corpse as I leave the bar. (exit to main street)
+            </inkd-button> 
+        </inkd-if>
+        <inkd-if rule="sennep==4">
+            <inkd-button goto="bodawayDies1" tabindex="0">
+                I died (unlucky)
+            </inkd-button>
+        </inkd-if> </div>
+        </div>
+    </inkd-node>
+    <inkd-node name="dodgeBullet" topic="dodgeBullet" set-prop="bullet:random(1 | 3)" data-inkdviz="x: 829.7, y: 16.2, basicMode: false" play-audio="gun">
+   <div class="ctnr">
+           <div class="content">
+       <img src="img/gunshot.png" class="screen">
+               <p class="transbox">I try to dodge the bullets coming my way...</p> </div>
+    <div class="btn_ctnr">           
+        <inkd-if rule="bullet==3">
+            <inkd-button goto="bodawayDies1" tabindex="0">
+                But one bullet went straight through my brain (unlucky)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="bullet==1 OR bullet==2">
+            <inkd-button goto="gotoJail1_0" tabindex="0">
+                Where am I? Why does my arm hurt so much?
+            </inkd-button> 
+        </inkd-if> </div> </div>
+    </inkd-node>
+    <inkd-node name="pullGunSennep1" topic="pullGunSennep1" set-prop="cecil:random(1 | 4)" data-inkdviz="x: 675.1, y: 10.8, basicMode: false" play-audio="gun">  <div class="ctnr">
+           <div class="content">
+       <inkd-box  animation  =  "wait:0.5s,  jello:2s:2"><img src="img/Gun_pulled.png" class="screen"> </inkd-box>
+               <p class="transbox">As I pull my gun in response to Cecil, shots are fired in both directions.</p> </div>
+    <div class="btn_ctnr">
+        <inkd-if rule="cecil==1 OR cecil==2 OR cecil==3">
+            <inkd-button goto="sennepDies" tabindex="0">
+                Probably too good of an end for that bastard. I'll spit on his corpse as I leave the bar. (exit to main street)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="cecil==4">
+            <inkd-button goto="bodawayDies1" tabindex="0">
+                I died (unlucky)
+            </inkd-button>
+        </inkd-if> </div> </div>
+    </inkd-node>
+    <inkd-node name="gotoJail1_0" topic="gotoJail1" data-inkdviz="x: 13.2, y: 480.9, basicMode: false" play-audio="jail1"  set-audio-volume = "jail1:0.8">    <div class="ctnr">
+           <div class="content">
+       <img src="img/jail.png" class="screen">
+               <p class="transbox">Gosh darnit, I've been thrown in jail. This will definitely make rescuing The Kid harder.</p> </div>
+    <div class="btn_ctnr">
+        <inkd-if rule="robbed==true">
+            <inkd-button goto="bribeAuthorities" tabindex="0" pause-audio="jail1">
+            Every man has a price (bribe them)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="sherifftalk==false"><inkd-button goto="talkSheriff" set-prop="sherifftalk=true" tabindex="0" pause-audio="jail1">
+            "You seem like a reasonable man, Sheriff."
+            </inkd-button></inkd-if>
+        <inkd-if rule="sherifftalk==true"><inkd-button goto="talkSheriff1" tabindex="0" pause-audio="jail1">
+            "Sheriff, I mean you no harm. Just hear me out..."
+            </inkd-button></inkd-if> </div>
+        </div>
+    </inkd-node>
+        <inkd-node name="talkSheriff1" topic="talkSheriff1" data-inkdviz="x: 641.9, y: 772.9, basicMode: false">
+        <div class="ctnr">
+           <div class="content"><img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">The sheriff let me go, so now I am back on the main street.</p></div>
+        <div class="btn_ctnr">       
+        <inkd-button goto="startLiberation" tabindex="0" pause-audio="step">
+            Start liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="step">
+            Whiskey would probably make this easier. (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="townsfolk==false"><inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            Although they could recognize me, these people might help me out. (talk to townsfolk)
+            </inkd-button></inkd-if>
+        <inkd-if rule="casino==false"><inkd-button goto="enterCasino1" tabindex="0">
+            Casinos are fun, let's go there! (enter casino)
+            </inkd-button></inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="hitSennep" topic="hitSennep" data-inkdviz="x: 524.2, y: 567.7, basicMode: false" play-audio="block"><div class="ctnr">
+           <div class="content">
+       <inkd-box animation= "wait:2s,  swing:2s:2"><img src="img/punch.png" class="screen"></inkd-box>
+               <p class="transbox">Who knew it would feel so good to sink my fist into Sennep's jaw?</p> </div>
+    <div class="btn_ctnr">
+        <inkd-button goto="continueFight" tabindex="0">
+            "I'm going to string you up and watch you stop kicking!"
+        </inkd-button>
+        <inkd-button goto="pullGunSennep" tabindex="0">
+            Time to kill this son of a bitch!
+        </inkd-button> </div> </div>
+    </inkd-node>
+    <inkd-node name="beBlunt" topic="beBlunt" data-inkdviz="x: 918.1, y: 211.5, basicMode: false" play-audio="doubt" set-audio-volume = "doubt:0.5"><div class="ctnr">
+           <div class="content">
+       <img src="img/bartender.png" class="screen">
+               <p class="transbox">Cecil's eyes narrow and I can tell my cover has blown.</p> </div>
+               <div class="btn_ctnr">
+        <inkd-button goto="exitBar" tabindex="0" pause-audio="doubt">
+            I guess it's my cue to get the hell out of here. (exit to main street)
+        </inkd-button>
+        <inkd-button goto="keepPushing" tabindex="0" pause-audio="doubt">
+            "So, what about that convoy?"
+                   </inkd-button></div></div>
+    </inkd-node>
+    <inkd-node name="complimentCecil" topic="complimentCecil" data-inkdviz="x: 771.7, y: 268.0, basicMode: false" play-audio="bar" set-audio-volume = "bar:0.4"><div class="ctnr">
+           <div class="content">
+       <img src="img/bartender.png" class="screen">
+               <p class="transbox">Cecil, slurring his words, tells me that according to his other customers, the convoy will come to town around 4pm.</p></div>
+        <div class="btn_ctnr">       
+        <inkd-button goto="exitBar2" set-prop="help :+1" tabindex="0" pause-audio="bar">
+            "Gotta go, thanks for the hog-killin' time, Cecil" (exit to main street)
+            </inkd-button> </div> </div>
+    </inkd-node>
+    <inkd-node name="exitBar" topic="exitBar" data-inkdviz="x: 972.1, y: 472.2, basicMode: false" play-audio="sigh" set-audio-volume="sigh:0.8">
+       <div class="ctnr">
+           <div class="content"><img src="img/boot.png" class="screen">
+               <p class="transbox">Darn, I got nothing from Cecil</p></div>
+        <div class="btn_ctnr">
+           <inkd-button goto="startLiberation" tabindex="0">
+            Time to start the liberation *point of no return*
+        </inkd-button> 
+        <inkd-if rule="office==false">
+            <inkd-button goto="enterOffice1" tabindex="0">
+                It may be dangerous, but the sheriff might help me out. (enter the sheriff's office)
+            </inkd-button>
+        </inkd-if> <br>
+        <inkd-if rule="casino==false">
+            <inkd-button goto="enterCasino1" tabindex="0">
+                Casinos are fun, let's go there (enter casino)
+            </inkd-button> 
+            </inkd-if></div></div>
+    </inkd-node>
+    <inkd-node name="keepPushing" topic="keepPushing" data-inkdviz="x: 873.2, y: 360.8, basicMode: false" play-audio="doubt" set-audio-volume = "doubt:0.4">
+       <div class="ctnr">
+           <div class="content"><img src="img/bar.png" class="screen">
+               <p class="transbox">.</div>
+             <div class="btn_ctnr">
+        <inkd-button goto="gotoJail1_0" tabindex="0" pause-audio="doubt">
+            "Where are you taking me?"
+                 </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="exitBar2" topic="exitBar2" data-inkdviz="x: 717.2, y: 420.7, basicMode: false">
+       <div class="ctnr">
+           <div class="content"><img src="img/threeBuildings.png" class="screen">
+               <p class="transbox"> Cecil nearly jawed me to death. But at least I have the information I need.</p> </div>
+ <div class="btn_ctnr">
+        <inkd-button goto="startLiberation" tabindex="0">
+            Start liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="office==false">
+            <inkd-button goto="enterOffice1" tabindex="0">
+                It may be dangerous, but the sheriff might help me out. (enter the sheriff's office)
+            </inkd-button>
+        </inkd-if> <br>
+        <inkd-if rule="casino==false">
+            <inkd-button goto="enterCasino1" tabindex="0">
+                Casinos are fun, let's go there (enter casino)
+            </inkd-button>
+     </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="continueFight" topic="continueFight" data-inkdviz="x: 718.7, y: 546.1, basicMode: false" play-audio="block">
+       <div class="ctnr">
+           <div class="content">
+           <img src="img/boot.png" class="screen">
+               <p class="transbox">Ornary Sennep deserved that whippin'. I don't even care that the sheriff's office has shown up to foil my fun.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="gotoJail1_0" tabindex="0">
+            "You don't have nothin' under that hat but hair. Let me go!"
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="sennepDies" topic="sennepDies" data-inkdviz="x: 501.7, y: 734.6, basicMode: false" play-audio="doubt" set-audio-volume = "doubt:0.4"> <div class="ctnr">
+           <div class="content">
+       <img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">Now the Sennep has been left for buzzard food, and I narrowly escaped the bar, I can either start the liberation of The Apache Kid or quit beatin' the devil around the stump and just talk to the sheriff before he comes for me.</p></div>
+               <div class="btn_ctnr">
+            <inkd-button goto="enterOffice2" tabindex="0" pause-audio="doubt">
+                I'm going to smooth things over with the sheriff himself (enter the sheriff's office)
+            </inkd-button>
+                <inkd-button goto="startLiberation" tabindex="0" pause-audio="step">
+            I have everything I need, I'm going to start the liberation *point of no return*
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="robCasino" topic="robCasino" set-prop="rob:random(1 | 3)" data-inkdviz="x: 294.4, y: 725.3, basicMode: false" play-audio="gun">
+       <div class="ctnr">
+           <div class="content"><img src="img/Pull_gun.png" class="screen">
+               <p class="transbox">All hell breaks loose when I reach for my cannon and proceed to take what I want. Kesef's men point their own black-eyed Susans at me.</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="rob==1 OR rob==2">
+            <inkd-button goto="escapeCasino" set-prop="robbed=true" tabindex="0" pause-audio="gun">
+                I'm full as a tick with this wealth, better get outta here. (exit to main street)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="rob==3">
+            <inkd-button goto="bodawayDies1" tabindex="0">
+                I'll be counting worms from now on. (You died, how unlucky!)
+            </inkd-button>
+                   </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="talkKesef" topic="talkKesef" data-inkdviz="x: 423.8, y: 841.3, basicMode: false" play-audio="bar" set-audio-volume = "bar:0.4"><div class="ctnr">
+           <div class="content">
+       <img src="img/kessef.png" class="screen">
+               <p class="transbox">As I thought, this man is Kesef, the owner of the casino. He's a big bug in this here town. It'd be prudent for me to remember that.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="kesefAlerted" tabindex="0" pause-audio="bar">
+            "Do you know anything about the convoy carrying The Apache Kid?"
+        </inkd-button>
+        <inkd-button goto="playPoker" tabindex="0" pause-audio="bar">
+            "Let's play a round of poker."
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="escapeCasino" topic="escapeCasino" set-prop="robbed=true" data-inkdviz="x: 1005.6, y: 1094.4, basicMode: false" play-audio="step" set-audio-volume = "step:0.4"><div class="ctnr">
+           <div class="content">
+       <img src="img/boot.png" class="screen">
+               <p class="transbox">I escape the casino by the skin of my teeth and hide for a while. I cannot enter the sheriff's office for obvious reasons but the saloon is still open and there are some people on the main street.</p></div>
+     <div class="btn_ctnr">
+        <inkd-button goto="startLiberation" tabindex="0" pause-audio="step">
+            Now's the time, I am going to start the liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="step">
+            I need a drink (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="townsfolk==false"><inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            I could be raisin' sand, but these people could help me out (ask townsfolk)
+            </inkd-button></inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="startLiberation" topic="startLiberation" data-inkdviz="x: 2290.1, y: 1215.4, basicMode: false" play-audio="sigh" set-audio-volume="sigh:0.8">
+       <div class="ctnr">
+           <div class="content"><img src="img/revolution.png" class="screen">
+               <p class="transbox">This only ends a few different ways, a lot of them bloody.</p></div>
+     <div class="btn_ctnr">
+        <inkd-if rule="help==0">
+            <inkd-button goto="noHelp" tabindex="0">
+                I didn't get any help but it's time to make my move
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="help==1 OR help==2">
+            <inkd-button goto="someHelp" tabindex="0">
+                At least I got some help!
+            </inkd-button>
+        </inkd-if>
+                <inkd-if rule="help==3">
+            <inkd-button goto="alotofHelp" tabindex="0">
+                I got a lot of help.
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="help==4">
+            <inkd-button goto="allHelp" tabindex="0">
+                I got all the help I could get.
+            </inkd-button>
+         </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="kesefAlerted" topic="kesefAlerted" data-inkdviz="x: 628.2, y: 897.4, basicMode: false" play-audio="cowboy" set-audio-volume = "cowboy:0.4">
+       <div class="ctnr">
+           <div class="content"><img src="img/wanted.png" class="screen">
+               <p class="transbox">Kesef recognizes me from a wanted poster and, like the wobblin' jaw he is, calls in authorities</p> </div>
+     <div class="btn_ctnr">               
+        <inkd-button goto="gotoJail1_0" tabindex="0" pause-audio="cowboy">
+            "Where are you taking me, you cow turds?"
+         </inkd-button></div></div>
+    </inkd-node>
+    <inkd-node name="playPoker" topic="playPoker" set-prop="poker:random(1 | 2)" data-inkdviz="x: 505.3, y: 973.0, basicMode: false" play-audio="card" set-audio-volume = "card:0.5">
+       <div class="ctnr">
+           <div class="content"><img src="img/casino.png" class="screen">
+               <p class="transbox">I slowly look at my cards...</p></div>
+            <div class="btn_ctnr">
+        <inkd-if rule="poker==1">
+            <inkd-button goto="bodawayWins" tabindex="0" pause-audio="card">
+                Full house. I can't believe it!
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="poker==2">
+            <inkd-button goto="playPokerAgain" tabindex="0" pause-audio="card">
+                A pair of 4's, dad-blame it!
+            </inkd-button>
+                </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="playPoker1" topic="playPoker1" set-prop="poker:random(1 | 2)" data-inkdviz="x: 505.3, y: 973.0, basicMode: false" play-audio="card" set-audio-volume = "card:0.5">
+       <div class="ctnr">
+           <div class="content"><img src="img/casino.png" class="screen">
+               <p class="transbox">I slowly look at my cards...</p></div>
+  <div class="btn_ctnr">
+        <inkd-if rule="poker==1">
+            <inkd-button goto="bodawayWins" tabindex="0" pause-audio="card">
+                Full house. I can't believe it!
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="poker==2">
+            <inkd-button goto="playPokerAgain" tabindex="0" pause-audio="card">
+                Hell fire, a high card!
+            </inkd-button>
+      </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="bodawayWins" topic="bodawayWins" data-inkdviz="x: 654.1, y: 994.0, basicMode: false" play-audio="card" set-audio-volume = "card:0.5">
+   <div class="ctnr">
+           <div class="content">       
+    <img src="img/pokerChips.png" class="screen">
+               <p class="transbox">My poker skills seem to impress Kesef. After a bit more conversatin', he gets to tellin' me about his crush on Rubis.</p> </div>
+               <div class="btn_ctnr">
+        <inkd-button goto="getKesefHelp" set-prop="help :+1" tabindex="0" pause-audio="card">
+            "I might be able to help you out with the future missus, if you help me with the convoy..."
+                   </inkd-button> </div> </div>
+    </inkd-node>
+    <inkd-node name="playPokerAgain" topic="playPokerAgain" data-inkdviz="x: 934.7, y: 955.1, basicMode: false" play-audio="sigh" set-audio-volume="sigh:0.7">
+       <div class="ctnr">
+           <div class="content"><img src="img/ext_Casino.png" class="screen">
+               <p class="transbox">"Double or nothing. Or I can just walk away."</p> </div>
+                <div class="btn_ctnr">
+        <inkd-button goto="playPoker1" tabindex="0">
+            Try again! I want to prove I can do better.
+        </inkd-button><br>
+            <inkd-button goto="bodawayLoses" tabindex="0">
+                I'm going to call it quits and exit the casino (go back to the main street)
+                    </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="bodawayLoses" topic="bodawayLoses" data-inkdviz="x: 934.7, y: 955.1, basicMode: false" play-audio="sigh" set-audio-volume="sigh:0.7"><div class="ctnr">
+           <div class="content">
+       <img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">Back where I started, and still without help from Kesef.</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="step">
+                Is there a place to grab a drink in this one horse town? (enter saloon)
+            </inkd-button></inkd-if>
+        <inkd-if rule="townsfolk==false">
+        <inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step" set-audio-volume = "step:0.5">
+            Maybe these gentle townsfolk could help me out
+            </inkd-button></inkd-if>
+        <inkd-if rule="office==false">
+            <inkd-button goto="enterOffice1" tabindex="0" pause-audio="step">
+                The sheriff might assist me (enter the sheriff's office)
+            </inkd-button>
+                   </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="getKesefHelp" topic="getKesefHelp" data-inkdviz="x: 851.8, y: 1089.1, basicMode: false"><div class="ctnr">
+           <div class="content">
+       <img src="img/kessef.png" class="screen">
+               <p class="transbox">Kesef knows a good bet when he sees one and agrees to provide his men to aid in my mission. I thank him kindly and exit the casino.</p> </div>
+               <div class="btn_ctnr">
+        <inkd-if rule="office==false">
+            <inkd-button goto="enterOffice1" tabindex="0">
+                Maybe the sheriff might help me (enter the sheriff's office)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0">
+                Is there a place to grab some scamper juice in here? (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-button goto="startLiberation" tabindex="0">
+            Start the liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="townsfolk==false"><inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            Could be dangerous but maybe these people could help me out
+            </inkd-button></inkd-if>
+        </div></div>
+    </inkd-node>
+    <inkd-node name="noHelp" topic="noHelp" set-prop="chances7:random(1 | 10)" data-inkdviz="x: 2524.1, y: 1245.1, basicMode: false"><div class="ctnr">
+           <div class="content"> <img src="img/revolution.png" class="screen">
+               <p class="transbox">Can I really pull this off by myself?</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="chances7==1 OR chances7==2 OR chances7==3 OR chances7==4 OR chances7==5 OR chances7==6 OR chances7==7 OR chances7==8 OR chances7==9">
+            <inkd-button goto="liberationFail" tabindex="0">
+                The Apache Kid is still behind bars, and I was shot!
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="chances7==10">
+            <inkd-button goto="liberationSuccess" tabindex="0">
+                I managed to save The Apache Kid on my own (very lucky)
+            </inkd-button> 
+        </inkd-if></div></div>
+    </inkd-node>
+    <inkd-node name="someHelp" topic="someHelp" set-prop="chances6:random(1 | 5)" data-inkdviz="x: 2868.4, y: 1084.6, basicMode: false"><div class="ctnr">
+           <div class="content">
+       <img src="img/revolution.png" class="screen">
+               <p class="transbox">I feel prepared for the mission thanks to the little help I got in town.</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="chances6==1">
+            <inkd-button goto="liberationSuccess_0" tabindex="0">
+                Get out of here while you can, Kid!
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="chances6==2 OR chances6==3 OR chances6==4">
+            <inkd-button goto="liberationSuccess" tabindex="0">
+                You're outnumbered, so hand over The Apache Kid now!
+            </inkd-button> <br>
+        </inkd-if>
+        <inkd-if rule="chances6==5">
+            <inkd-button goto="liberationFail" tabindex="0">
+                I am shot! And The Apache Kid is still in custody.
+            </inkd-button>
+                   </inkd-if></div></div>
+    </inkd-node>
+    <inkd-node name="bribeAuthorities" topic="bribeAuthorities" data-inkdviz="x: 638.1, y: 683.6, basicMode: false">
+       <div class="ctnr">
+           <div class="content"><img src="img/currency.png" class="screen">
+               <p class="transbox">I bribe authorities and they free me.</p> </div>
+               <div class="btn_ctnr">
+        <inkd-button goto="startLiberation" tabindex="0">
+            Start the liberation *point of no return*
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="talkSheriff" topic="talkSheriff" data-inkdviz="x: 641.9, y: 772.9, basicMode: false">
+       <div class="ctnr">
+           <div class="content"><img src="img/sheriff.png" class="screen">
+               <p class="transbox">According to townsfolk, the sheriff is an upstanding lawman, so I try to convince him that The Apache Kid is a good person. However, I can also see that he is clenching his fists and not in the best of moods.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="tellStories" set-prop="stories=true, help :+1" tabindex="0">
+            Tell stories of the Apache Kid's history to appeal to him.
+        </inkd-button>
+        <inkd-button goto="jailEnd" tabindex="0">
+            I'm lookin' to get him mad enough to swallow a horn-toad backwards. (spit on the sheriff)
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="tellStories" topic="tellStories" data-inkdviz="x: 965.4, y: 751.3, basicMode: false"> <div class="ctnr">
+           <div class="content">
+       <img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">Back on the main drag, I keep replaying the conversation in my head. I told the sheriff stories of how in the army, Native American families including The Apache Kid's, were killed by Sennep and his soldiers. The sheriff is convinced to help me with liberation of The Apache Kid. He says that it's time to make things right.</p> </div>
+         <div class="btn_ctnr">      
+        <inkd-button goto="startLiberation" tabindex="0">
+            Start the liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="casino==false">
+            <inkd-button goto="enterCasino1" tabindex="0">
+                Casinos are fun. Let's go there (enter casino)
+            </inkd-button><br>
+        </inkd-if>
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0">
+                Is there a place to grab a drink in here? (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="townsfolk==false"><inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            It could be dangerous, but maybe these people could help me out
+            </inkd-button></inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="askTownsfolk" set-prop="townsfolk=true, wanted:random(1 | 4)" topic="askTownsfolk" data-inkdviz="x: 259.2, y: 189.6, basicMode: false" play-audio="bar"  set-audio-volume = "bar:0.4">
+       <div class="ctnr">
+           <div class="content">
+       <img src="img/madamerubis.png" class="screen">
+               <p class="transbox">It isn't long before I'm talking to the ace-high woman in this town (as far as all the men are concerned), Madame Rubis, who through her close contact with the army men is up-to-snuff on the whos and whats and whens of this town.</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="wanted==1 OR wanted==2 OR wanted==3">
+            <inkd-button goto="notRecognized" set-prop="help :+1" tabindex="0" pause-audio="bar">
+                Madame Rubis really helped me out, time to skedaddle. (go back to the main street)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="wanted==4">
+            <inkd-button goto="gotoJail1_0" tabindex="0" pause-audio="bar">
+                As I talked to Rubis, I was recognized by one of the locals who decided to wake snakes.
+            </inkd-button>
+                   </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="notRecognized" topic="notRecognized" data-inkdviz="x: 242.6, y: 374.4, basicMode: false" play-audio="cowboy" set-audio-volume = "cowboy:0.4">
+       <div class="ctnr">
+           <div class="content"><img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">Madame Rubis told me that there are going to be six people guarding the convoy.</p></div>
+                <div class="btn_ctnr">
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="cowboy">
+                Is there a place to grab a drink in here? (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="casino==false">
+            <inkd-button goto="enterCasino1" tabindex="0" pause-audio="cowboy">
+                Casinos are fun, let's go there (enter casino)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="office==false">
+            <inkd-button goto="enterOffice1" tabindex="0" pause-audio="cowboy">
+                The sheriff might help me (enter the sheriff's office)
+            </inkd-button>
+                    </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="liberationSuccess" topic="liberationSuccess1" data-inkdviz="x: 2675.6, y: 939.2, basicMode: false" play-audio= "victory" set-audio-volume = "victory:0.5">
+        <div class="ctnr">
+           <div class="content"><img src="img/Success.png" class="screen">
+               <p class="transbox">I'm grinn' like a possum eatin' a yellow jacket, because The Apache Kid is freed! My mission is a success!</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="nodes1" tabindex="0" pause-audio="victory">
+            Replay?
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="liberationSuccess_0" topic="liberationSuccess2" data-inkdviz="x: 2369.2, y: 836.6, basicMode: false" play-audio="sigh" set-audio-volume = "sigh:0.6">
+       <div class="ctnr">
+           <div class="content">
+           <img src="img/Part_Success.png" class="screen">
+               <p class="transbox">The Apache Kid is saved, but even though I was heeled I bit the dust.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="nodes1" tabindex="0">
+            Replay?
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="liberationFail" topic="liberationFail" data-inkdviz="x: 2052.4, y: 821.1, basicMode: false" play-audio="fail" set-audio-volume = "fail:0.8">
+       <div class="ctnr">
+           <div class="content"><img src="img/jail.png" class="screen">
+               <p class="transbox">The Apache Kid remains in custody, despite all my fussin' around (unlucky).</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="nodes1" tabindex="0" pause-audio="fail">
+            Replay?
+                   </inkd-button></div></div>
+    </inkd-node>
+    <inkd-node name="casinoHelp" topic="casinoHelp" set-prop="chances5:random(1 | 5)" data-inkdviz="x: 2698.6, y: 1171.6, basicMode: false"><div class="ctnr">
+           <div class="content">
+       <img src="img/currency.png" class="screen">
+               <p class="transbox">I offer the men with the convoy some Lincoln skins to free The Apache Kid</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="chances5==1">
+            <inkd-button goto="liberationFail" tabindex="0">
+                 I am shot! And The Apache Kid is still in custody.
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="chances5==2 OR chances5==3 OR chances5==4">
+            <inkd-button goto="liberationSuccess" tabindex="0">
+                "You're outnumbered, so hand over The Apache Kid now!"
+            </inkd-button> 
+        </inkd-if>
+        <inkd-if rule="chances5==5">
+            <inkd-button goto="liberationSuccess_0" tabindex="0">
+                "Get out of here while you can, Kid!"
+            </inkd-button>
+                   </inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="beginning" topic="beginning" data-inkdviz="x: 23.2, y: 90.7, basicMode: false">
+          <div class="ctnr">
+           <div class="content">
+           <img src="img/bodaway1.png" class="screen"> 
+               <p class="transbox">The Apache Kid, a notorious renegade has been captured and is in transit to Yuma through Loma Parda. As one of his faithful posse, you aim to free him before he's brought to his final location. You've had good luck thus far on your mission, but perhaps your decisions will trigger your unfortunate demise. Will you, Bodaway, manage to free your friend The Apache Kid?</p> </div>
+               <div class="btn_ctnr">
+        <inkd-button goto="enterTown" tabindex="0" pause-audio="west">
+            I thought it would be more well guarded (enter town)
+        </inkd-button>
+        <inkd-button goto="stayOutside" tabindex="0" pause-audio="west">
+            Better keep my head low not to arouse suspicion (stay outside)
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="credits" topic="credits" data-inkdviz="x: 23.2, y: 90.7, basicMode: false" play-audio="west" set-audio-volume="west:0.4">
+       <div class="ctnr">
+           <div class="content"> 
+        <p style='top:90px;left:200px;'> <b>Created by:</b><br>Anna Walant, Scott Swartz, Elsa Chia Yu Yeh, Daniyar Sadykhanov <br><br><b>Research Source:</b><br> <span style='font-size:10px;font-weight:400;'>
+https://www.warpaths2peacepipes.com/native-american-indian-names/apache-names.htm <br>
+https://www.legendsofamerica.com/na-apachekid/ <br>
+https://www.newmexico.org/places-to-go/true-trails/ghost-towns/loma-parda/ <br>
+https://graphicburger.com/6-vintage-wood-textures-vol-3/</span> <br> <br> <b>Sound Source:</b><br><span style='font-size:14px;font-weight:lighter;margin:2px;padding:2px;'>
+Longing for Tumbleweeds   http://ccmixter.org/files/admiralbob77/33347<br>
+Blues/Cowboy/West acoustic guitar intro   https://freesound.org/people/Septem-Oxyuranus/sounds/411431/<br>
+Lonely cowboy https://freesound.org/people/limetoe/sounds/237789/<br>
+Spaghetti-Western Guitar western-deep-progression-01.wav<br>
+https://freesound.org/people/MinigunFiend/sounds/175159/<br>
+Cards shuffling https://freesound.org/people/deraj/sounds/202544/<br>
+Gun for ghose https://freesound.org/people/martian/sounds/182273/
+Steps_Park https://freesound.org/people/hannagreen/sounds/346567/<br>
+Busy bar ambient sound  https://freesound.org/people/ericlemans/sounds/261985/<br>
+Tale Jail https://freesound.org/people/Krinkron/sounds/178815/<br>
+JailDoorClose https://freesound.org/people/TurtleLG/sounds/80449/<br>
+Punch with splits https://freesound.org/people/nicktermer/sounds/259544/<br>
+Block https://freesound.org/people/FlameEagle/sounds/131142/<br>
+Fight Scene https://freesound.org/people/FlameEagle/sounds/131142/<br>
+Victory Celebration Movie Score https://freesound.org/people/FunWithSound/sounds/369252/<br>
+Fail Sound Effect - Accoustic Guitar https://freesound.org/people/florianreichelt/sounds/412427/<br> Sigh4 https://freesound.org/people/K1m218/sounds/60671/<br> </span>
+               </p></div>
+                <div class="btn_ctnr">
+        <inkd-button goto="beginning" tabindex="0" pause-audio="west">
+            Start game
+                    </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="bodawayDies1" topic="bodawayDies1" data-inkdviz="x: 880.0, y: 612.8, basicMode: false" play-audio="fail" set-audio-volume = "fail:0.8">
+        <div class="ctnr">
+           <div class="content"><img src="img/RIP.png" class="screen">
+               <p class="transbox">My journey comes to an end.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="nodes1" tabindex="0" pause-audio="fail">
+            Replay?
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="enterOffice1" set-prop="office=true" topic="enterOffice1" data-inkdviz="x: 751.0, y: 861.6, basicMode: false" play-audio="jail" set-audio-volume = "jail:0.6"><div class="ctnr">
+           <div class="content">
+       <img src="img/ext_Jail.png" class="screen">
+               <p class="transbox">I enter the local jailhouse and see the sheriff who is slightly surprised to see me since I am a wanted varment.</p> </div>
+               <div class="btn_ctnr">
+        <inkd-if rule="sherifftalk==false"><inkd-button goto="talkSheriff" set-prop="sherifftalk=true" tabindex="0" pause-audio="jail1">
+            I have to smooth-talk the sheriff
+            </inkd-button></inkd-if>
+        <inkd-if rule="sherifftalk==false"><inkd-button goto="gotoJail1_0" tabindex="0" pause-audio="jail">
+            "Go to blazes, sherrif!" (punch the sheriff)
+            </inkd-button></inkd-if>
+        <inkd-if rule="sherifftalk==true"><inkd-button goto="exitOffice" tabindex="0" pause-audio="jail1">
+            I already talked to the sheriff
+            </inkd-button></inkd-if> </div></div>
+    </inkd-node>
+    <inkd-node name="exitOffice" topic="exitOffice" data-inkdviz="x: 641.9, y: 772.9, basicMode: false"><div class="ctnr">
+           <div class="content">
+       <img src="img/threeBuildings.png" class="screen">
+               <p class="transbox">I am back on the main street.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="startLiberation" tabindex="0" pause-audio="step">
+            Start the liberation *point of no return*
+        </inkd-button>
+        <inkd-if rule="saloon==false">
+            <inkd-button goto="enterBar1" tabindex="0" pause-audio="step">
+            I need a drink (enter saloon)
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="townsfolk==false"><inkd-button goto="askTownsfolk" tabindex="0" pause-audio="step">
+            Could be dangerous but maybe these people could help me out
+            </inkd-button></inkd-if>
+        <inkd-if rule="casino==false"><inkd-button goto="enterCasino1" tabindex="0">
+            Casinos are fun, let's go there (enter casino)
+            </inkd-button></inkd-if> </div></div>
+    </inkd-node>
+        <inkd-node name="enterOffice2" set-prop="office=true" topic="enterOffice2" data-inkdviz="x: 751.0, y: 861.6, basicMode: false" play-audio="jail" set-audio-volume = "jail:0.5">
+        <div class="ctnr">
+           <div class="content"><img src="img/ext_Jail.png" class="screen">
+               <p class="transbox">I enter the local jailhouse and see the sheriff lookin' stumped. He attempts to lay his hands on me.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="talkSheriff" tabindex="0" pause-audio="jail">
+            "Wait a second!"
+        </inkd-button>
+        <inkd-button goto="gotoJail1_0" tabindex="0" pause-audio="jail">
+            "You couldn't tell skunks for house cats, you have no idea who I am" (punch the sheriff)
+                   </inkd-button> </div></div>
+    </inkd-node>
+    <inkd-node name="backDown" topic="backDown" data-inkdviz="x: 358.9, y: 561.5, basicMode: false" play-audio="cowboy" set-audio-volume = "cowboy:0.4"><div class="ctnr">
+           <div class="content">
+       <img src="img/bar.png" class="screen">
+               <p class="transbox">I come to my senses and decide what to do next.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="talkCecil" tabindex="0" pause-audio="cowboy">
+            I should talk to the bartender
+        </inkd-button>
+        <inkd-button goto="cornerObserve" tabindex="0" pause-audio="cowboy">
+            I better cool down
+                   </inkd-button></div></div>
+    </inkd-node>
+    <inkd-node name="jailEnd" topic="jailEnd" data-inkdviz="x: 785.8, y: 747.8, basicMode: false" play-audio="jail1"  set-audio-volume = "jail1:0.7"><div class="ctnr">
+           <div class="content">
+       <img src="img/jail.png" class="screen">
+               <p class="transbox">Naturally, the sherrif was fit to be tied, so I have to remain in custody for a long time. The Apache Kid is never saved.</p></div>
+               <div class="btn_ctnr">
+        <inkd-button goto="nodes1" tabindex="0" pause-audio="jail1">
+            Replay?
+                   </inkd-button></div></div>
+    </inkd-node>
+    <inkd-node name="alotofHelp" topic="alotofHelp" set-prop="chances3:random(1 | 10)" data-inkdviz="x: 2477.6, y: 1340.4, basicMode: false"><div class="ctnr">
+           <div class="content">
+       <img src="img/revolution.png" class="screen">
+               <p class="transbox">Thanks to my new connections in town, I feel confident in rescuing The Apache Kid</p></div>
+               <div class="btn_ctnr">
+        <inkd-if rule="chances3==1 OR chances3==2 OR chances3==3 OR chances3==4 OR chances3==5 OR chances3==6 OR chances3==7 OR chances3==8 Or chances3==9">
+            <inkd-button goto="liberationSuccess" tabindex="0">
+                "You're outnumbered, so hand over The Apache Kid now!"
+            </inkd-button>
+        </inkd-if>
+        <inkd-if rule="chances3==10">
+            <inkd-button goto="liberationSuccess_0" tabindex="0">
+                "Get out of here while you can, Kid!"
+            </inkd-button>
+                   </inkd-if></div></div>
+    </inkd-node>
+        <inkd-node name="allHelp" topic="allHelp" data-inkdviz="x: 2477.6, y: 1340.4, basicMode: false"><div class="ctnr">
+           <div class="content">
+        <img src="img/boot.png" class="screen">
+               <p class="transbox">Thanks to my new friends in town, I feel confident in rescuing The Apache Kid</p></div>
+               <div class="btn_ctnr">
+            <inkd-button goto="liberationSuccess" tabindex="0">
+                "You're outnumbered, so hand over The Apache Kid now!"
+                   </inkd-button></div></div>
+    </inkd-node>
+</inkd-content>
